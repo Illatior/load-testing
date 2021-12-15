@@ -93,7 +93,7 @@ func (ui *cui) Run(ctx context.Context, metrics <-chan *metric.Result, dispatchD
 	}()
 
 	ctx, cancel := context.WithCancel(ctx)
-	go ui.update(ctx)
+	go ui.update(ctx, dispatchDone)
 	go func() {
 		for _, s := range ui.screens {
 			go s.Run(ctx)
@@ -126,13 +126,15 @@ func (ui *cui) GetDoneChan() <-chan bool {
 	return ui.done
 }
 
-func (ui *cui) update(ctx context.Context) {
+func (ui *cui) update(ctx context.Context, dispatchDone <-chan bool) {
 	t := time.NewTicker(ui.updateInterval)
 	defer t.Stop()
 
 	for {
 		select {
 		case <-ctx.Done():
+			return
+		case <-dispatchDone:
 			return
 		case <-t.C:
 			currentScreen := ui.screens[ui.currentScreen]

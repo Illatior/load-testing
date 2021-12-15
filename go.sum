@@ -15,8 +15,6 @@ github.com/mum4k/termdash v0.16.0 h1:oez5/noRpk8Lc+4u05QTU1LGGcvUkhEFk2kV9lClQAg
 github.com/mum4k/termdash v0.16.0/go.mod h1:bkSQsw2tif8pLQtGmfxh20N1idek+Hzol/wj+1ZC3cM=
 github.com/nsf/termbox-go v0.0.0-20201107200903-9b52a5faed9e h1:T8/SzSWIDoWV9trslLNfUdJ5yHrIXXuODEy5M0vou4U=
 github.com/nsf/termbox-go v0.0.0-20201107200903-9b52a5faed9e/go.mod h1:IuKpRQcYE1Tfu+oAQqaLisqDeXgjyyltCfsaoYN18NQ=
-github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
-github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rivo/uniseg v0.1.0 h1:+2KBaVoUmb9XzDsrx/Ct0W/EYOSFf/nWTauy++DprtY=

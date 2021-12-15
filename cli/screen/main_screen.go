@@ -14,6 +14,8 @@ import (
 
 const (
 	mainScreenLineChartId = "mainScreen-lineChart"
+	maxInt64              = ^int64(0)
+	minInt64              = -maxInt64 - 1
 )
 
 type mainScreen struct {
@@ -51,7 +53,7 @@ func NewMainScreen() (Screen, error) {
 
 	footer := grid.RowHeightPerc(
 		35,
-		grid.ColWidthPerc(10, grid.Widget(m.optionsText, borderLight(), borderTitle("Run options"))),
+		grid.ColWidthPerc(10, grid.Widget(m.optionsText, borderLight(), borderTitle("Options"))),
 		grid.ColWidthPerc(20, grid.Widget(m.latenciesText, borderLight(), borderTitle("Latencies"))),
 		grid.ColWidthPerc(20, grid.Widget(m.responsesText, borderLight(), borderTitle("Responses"))),
 		grid.ColWidthPerc(20, grid.Widget(m.errorsText, borderLight(), borderTitle("Errors"))),

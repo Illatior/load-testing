@@ -21,14 +21,14 @@ func (cm *chartMetrics) ConsumeResult(res *Result) {
 		Duration:  res.Duration,
 	}
 
-	cm.entries = sortedInsert(cm.entries, entry)
+	cm.entries = append(cm.entries, entry)
 }
 
 func (cm *chartMetrics) GetInRange(from, to time.Time) []ChartEntry {
 	res := make([]ChartEntry, 0)
-	for i := len(cm.entries) - 1; i >= 0; i-- {
+	for i := 0; i < len(cm.entries); i++ {
 		entry := *cm.entries[i]
-		if !(entry.Timestamp.After(to) || entry.Timestamp.Before(from)) {
+		if entry.Timestamp.After(from) || entry.Timestamp.Before(to) {
 			res = append(res, entry)
 		}
 	}
